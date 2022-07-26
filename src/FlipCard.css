@@ -1,0 +1,42 @@
+/* create the flipping style */
+
+.FlipCard {
+  position: relative;
+  width: 15em;
+  height: 10em;
+  margin: 1em;
+  perspective: 1000px;
+}
+
+.FlipCard-rotator {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.FlipCard-rotator.flipped {
+  transform: rotateY(180deg);
+}
+
+.FlipCard-front, .FlipCard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* styling */
+  
+  border-radius: 1em;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.FlipCard-back {
+  background-color: red; /* styling */
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
