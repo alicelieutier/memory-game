@@ -4,12 +4,5 @@
 }
 
 .App-wrapper {
-  margin-top: 2em;
-}
-
-.App-cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  padding: 1em;
 }

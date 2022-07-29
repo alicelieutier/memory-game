@@ -2,10 +2,25 @@
 
 .FlipCard {
   position: relative;
-  width: 15em;
-  height: 10em;
-  margin: 1em;
+  /* width: 100%; */
+  width: 14.5vw;
+  height: 14.5vw;
   perspective: 1000px;
+  margin: 0.5vw;
+}
+
+.FlipCard .ImageCard {
+  width: 100%;
+  height: 100%;
+}
+
+.FlipCard .TitleCard {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .FlipCard-rotator {
@@ -27,6 +42,7 @@
   background-color: white; /* styling */
   
   border-radius: 1em;
+  overflow: hidden;
 
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;

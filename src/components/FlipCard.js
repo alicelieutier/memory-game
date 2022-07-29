@@ -1,6 +1,4 @@
 import './FlipCard.css';
-import * as React from 'react';
-import { useState } from 'react';
 
 function FlipCard({front, back, showBack, flip}) {
   const flippedClass = showBack ? 'flipped' : '';
