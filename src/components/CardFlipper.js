@@ -1,36 +1,38 @@
 import './CardFlipper.css';
-import { useState } from 'react';
 import FlipCard from './FlipCard';
-import Button from '@mui/material/Button';
+import CardFront from './CardFront';
+import CardBack from './CardBack';
 
-function CardFlipper({ cards }) {
-  const [flippedCardsIndices, setFlippedCardsIndices] = useState(new Set())
-
-  const flippingCard = (index) => {
-    if (flippedCardsIndices.has(index)) {
-      flippedCardsIndices.delete(index)
-      setFlippedCardsIndices(new Set(flippedCardsIndices))
-    } else {
-      setFlippedCardsIndices(new Set([...flippedCardsIndices, index]))
-    }
-  }
+function CardFlipper({ cards, flippedCardsIndices, matchedCards, gameOver, flip }) {
 
   return (
     <div className="CardFlipper">
-      <Button variant="contained" onClick={() => setFlippedCardsIndices(new Set())}>RESET</Button>
+      <p>You have matched {matchedCards.size} pairs.</p>
+      { gameOver ? <h1>Well Done!</h1> : 
       <div className="CardFlipper-cards">
         {cards.map(
-          (card, index) => <FlipCard
+          (card, index) => card ?
+          <FlipCard
             key={index}
-            front={card.front}
-            back={card.back}
+            front={<CardFront url={card.url} name={card.name} />}
+            back={<CardBack pattern={'rhombus'} />}
             showBack={!flippedCardsIndices.has(index)}
-            flip={() => flippingCard(index)}
+            flip={() => flip(index)}
           />
+          : <EmptyCardSlot key={index} />
         )}
-      </div>
+      </div> 
+      }
     </div>
   );
 }
 
 export default CardFlipper;
+
+function EmptyCardSlot({ title }) {
+  return (
+    <div className="FlipCard">
+    </div>
+  );
+}
+

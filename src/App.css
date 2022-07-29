@@ -1,8 +1,8 @@
 .App {
   text-align: center;
-  background-color: blue;
+  background-color: white;
 }
 
 .App-wrapper {
-  padding: 1em;
+  margin: 1em auto;
 }

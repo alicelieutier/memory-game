@@ -2,26 +2,25 @@
 
 .FlipCard {
   position: relative;
-  /* width: 100%; */
-  width: 14.5vw;
-  height: 14.5vw;
+  width: min(14.5vw, 180px);
+  height: min(14.5vw, 180px);
   perspective: 1000px;
   margin: 0.5vw;
 }
 
-.FlipCard .ImageCard {
+/* .FlipCard .ImageCard {
   width: 100%;
   height: 100%;
-}
+} */
 
-.FlipCard .TitleCard {
+/* .FlipCard .TitleCard {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .FlipCard-rotator {
   position: relative;
@@ -41,11 +40,13 @@
   height: 100%;
   background-color: white; /* styling */
   
-  border-radius: 1em;
+  border-radius: 0.5vw;
   overflow: hidden;
 
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
 }
 
 .FlipCard-back {

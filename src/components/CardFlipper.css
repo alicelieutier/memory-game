@@ -5,6 +5,7 @@
   align-items: center;
   flex-wrap: wrap;
   height: 100%;
-  width: 100%;
+  width: min(100vw, 1200px);
+  margin: 0 auto;
   padding: 1em;
 }
